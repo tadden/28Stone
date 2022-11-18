@@ -6,17 +6,31 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "axios": "^1.1.3",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "react-select-search": "^4.1.6",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadden/28stone.git"
+  },
+  "author": "Ilja Kazanli <tadden12@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/tadden/28stone/issues"
+  },
+  "homepage": "https://tadden/28stone",
   "eslintConfig": {
     "extends": [
       "react-app",
