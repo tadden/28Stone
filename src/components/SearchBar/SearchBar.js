@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { fetchCurrencyPriceByQuery } from '../API/API';
+import SearchButton from '../SearchButton';
 import SelectSearch from 'react-select-search';
+import { fetchCurrencyPriceByQuery } from '../API/API';
 import 'react-select-search/style.css';
+import styles from './SearchBar.module.scss';
 
 export default function SearchBar({ data, onSubmit }) {
   const [query, setQuery] = useState('');
   const [currentValue, setCurrentValue] = useState('');
-  const [timeout, setTimeoutValue] = useState(0);
 
   const getLiveData = useCallback(() => {
     fetchCurrencyPriceByQuery(currentValue.replace('/', '')).then(newValue => {
@@ -18,15 +19,13 @@ export default function SearchBar({ data, onSubmit }) {
     if (query && query === currentValue) {
       setTimeout(() => {
         getLiveData();
-        setTimeoutValue(2000);
-      }, timeout);
+      }, [1000]);
     }
-  }, [query, getLiveData, data, currentValue, timeout]);
+  }, [query, getLiveData, data, currentValue]);
 
   const handleSubmit = e => {
     e.preventDefault();
     setCurrentValue(query);
-    setTimeoutValue(0);
   };
 
   const options = data.map(({ ticker }) => {
@@ -34,19 +33,22 @@ export default function SearchBar({ data, onSubmit }) {
   });
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <SelectSearch
-          options={options}
-          id="currency"
-          name="currency"
-          placeholder="Choose currency pair"
-          search={true}
-          onChange={setQuery}
-          value={query}
-        />
-        <button type="submit">Search</button>
-      </form>
+    <div className={styles.SearchBar__Wrapper}>
+      <h1 className={styles.SearchBar__Title}>Search a currency</h1>
+      <div className={styles.SearchBar__Form__Wrapper}>
+        <form className={styles.SearchBar__Form} onSubmit={handleSubmit}>
+          <SelectSearch
+            options={options}
+            id="currency"
+            name="currency"
+            placeholder="Choose currency pair"
+            search={true}
+            onChange={setQuery}
+            value={query}
+          />
+          <SearchButton />
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,18 @@
+.SearchBar {
+  &__Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+  &__Title {
+    // text-align: center;
+    font-size: 34px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  &__Form {
+    display: flex;
+  }
+}

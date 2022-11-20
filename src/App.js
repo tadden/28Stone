@@ -19,7 +19,6 @@ function App() {
   }, []);
   return (
     <div>
-      <h1>Search a currency</h1>
       <SearchBar data={currencyPair} onSubmit={handleFormSubmit} />
       <LiveWall data={currencyData} />
     </div>

@@ -1,0 +1,15 @@
+.Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  opacity: 1;
+  cursor: pointer;
+  outline: none;
+}
+.Button:hover {
+  opacity: 0.6;
+}
