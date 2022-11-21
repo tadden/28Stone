@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/28stone/static/css/main.fc3a1663.css",
+    "main.js": "/28stone/static/js/main.681b3e62.js",
+    "static/js/787.ebfdcf55.chunk.js": "/28stone/static/js/787.ebfdcf55.chunk.js",
+    "index.html": "/28stone/index.html",
+    "main.fc3a1663.css.map": "/28stone/static/css/main.fc3a1663.css.map",
+    "main.681b3e62.js.map": "/28stone/static/js/main.681b3e62.js.map",
+    "787.ebfdcf55.chunk.js.map": "/28stone/static/js/787.ebfdcf55.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc3a1663.css",
+    "static/js/main.681b3e62.js"
+  ]
+}
