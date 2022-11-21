@@ -26,6 +26,9 @@ export default function SearchBar({ data, onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
     setCurrentValue(query);
+    if (!query) {
+      alert('Search field is empty');
+    }
   };
 
   const options = data.map(({ ticker }) => {
@@ -34,7 +37,9 @@ export default function SearchBar({ data, onSubmit }) {
 
   return (
     <div className={styles.SearchBar__Wrapper}>
-      <h1 className={styles.SearchBar__Title}>Search a currency</h1>
+      <h1 data-testid="title-1" className={styles.SearchBar__Title}>
+        Search a currency
+      </h1>
       <div className={styles.SearchBar__Form__Wrapper}>
         <form className={styles.SearchBar__Form} onSubmit={handleSubmit}>
           <SelectSearch
